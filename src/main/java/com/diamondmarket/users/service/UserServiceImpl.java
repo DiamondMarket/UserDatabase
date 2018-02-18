@@ -1,5 +1,9 @@
 package com.diamondmarket.users.service;
 
+
+
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +21,9 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		User returnMessage=null;
 		try {
+				user.set_id(user.getUserRole().substring(0, 1)+LocalDateTime.now());
 				returnMessage = userRepository.save(user);
+				
 			
 		} catch (Exception e) {
 			// TODO: handle exception
