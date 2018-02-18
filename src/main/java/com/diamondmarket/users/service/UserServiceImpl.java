@@ -36,7 +36,6 @@ public class UserServiceImpl implements UserService {
 			if(user==null) {
 				throw new Exception("UserId: "+userId+" does not exist");
 			}
-			System.out.println("service return"+user.toString());
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -118,7 +117,6 @@ public class UserServiceImpl implements UserService {
 			throw new Exception("UserId can not be null");
 		}
 		catch(Exception e) {
-			System.out.println("catch exception: "+e.getMessage()+" loginservice");
 			throw e;
 		}
 		return returnUser;

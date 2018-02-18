@@ -76,12 +76,10 @@ public class UserApiController implements UserApi {
 			context.setApplicationLabel("demo");
 		}
     	try {
-    		System.out.println("\n\n\n\n\n Control create userid:"+body.get_id()+" "+body.toString() );
     		response = successResponse(context, userService.createUser(body), HttpStatus.CREATED);
     		
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println(e.getMessage());
 			response = errorResponse(context, e, HttpStatus.BAD_REQUEST);
 		}
     	
@@ -106,16 +104,12 @@ public class UserApiController implements UserApi {
 		}
 		
     	try {
-    		System.out.println("\n\n\n\n\n Control before delete :"+userId);
-    		
     		String deleteUser = userService.deleteUser(userId);
-    		System.out.println("After delete: ");
     		
     		response = successResponse(context,deleteUser, HttpStatus.OK);
     		
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println(e.getMessage());
 			response = errorResponse(context, e, HttpStatus.BAD_REQUEST);
 		}
     	
@@ -138,16 +132,13 @@ public class UserApiController implements UserApi {
 			context.setApplicationLabel("demo");
 		}
         	try {
-        		System.out.println("\n\n\n\n\n Control userid:"+userId);
         		
         		User user = userService.getUser(userId);
-        		System.out.println("After: "+user.toString());
         		
         		response = successResponse(context, user, HttpStatus.OK);
         		
     		} catch (Exception e) {
     			// TODO: handle exception
-    			System.out.println(e.getMessage());
     			response = errorResponse(context, e, HttpStatus.BAD_REQUEST);
     		}
         	
@@ -172,16 +163,13 @@ public class UserApiController implements UserApi {
 			context.setApplicationLabel("demo");
 		}
         	try {
-        		System.out.println("\n\n\n\n\n Control before loging username:"+username+" password: "+password);
         		
         		User loginUser = userService.loginUser(username,password);
-        		System.out.println("After: "+loginUser);
         		
         		response = successResponse(context, loginUser, HttpStatus.OK);
         		
     		} catch (Exception e) {
     			// TODO: handle exception
-    			System.out.println(e.getMessage());
     			response = errorResponse(context, e, HttpStatus.BAD_REQUEST);
     		}
         	
@@ -206,16 +194,13 @@ public class UserApiController implements UserApi {
 			context.setApplicationLabel("demo");
 		}
         	try {
-        		System.out.println("\n\n\n\n\n Control before update userid:"+body.get_id());
         		
         		User updateUser = userService.updateUser(body);
-        		System.out.println("After: "+updateUser);
         		
         		response = successResponse(context, updateUser, HttpStatus.OK);
         		
     		} catch (Exception e) {
     			// TODO: handle exception
-    			System.out.println(e.getMessage());
     			response = errorResponse(context, e, HttpStatus.BAD_REQUEST);
     		}
         	
