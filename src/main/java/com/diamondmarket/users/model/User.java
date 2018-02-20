@@ -1,19 +1,13 @@
 package com.diamondmarket.users.model;
 
-import java.io.Serializable;
 import java.util.Objects;
+
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
-
-import javax.validation.Valid;
-import javax.validation.constraints.*;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -30,6 +24,7 @@ public class User   {
   @JsonProperty("_id")
   private String _id;
 
+  @NotNull
   @JsonProperty("username")
   private String username = null;
 

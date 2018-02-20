@@ -1,9 +1,9 @@
 package com.diamondmarket.users.model;
 
 public class Data<T> {
-	
-	private T t;
 
+	private T t;
+	
 	public Data(T t) {
 		super();
 		this.t = t;
@@ -21,8 +21,5 @@ public class Data<T> {
 	public String toString() {
 		return "Data [t=" + t + "]";
 	}
-	
-	
 
-	
 }
