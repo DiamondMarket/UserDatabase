@@ -19,7 +19,6 @@
 		<version>1.4.7.RELEASE</version>
 	</parent>
 	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>com.spotify</groupId>
