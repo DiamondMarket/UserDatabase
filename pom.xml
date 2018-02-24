@@ -11,6 +11,7 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<springfox-version>2.6.1</springfox-version>
+		<docker.image.prefix>user_repository</docker.image.prefix>
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,13 +26,18 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>default</id>
+						<phase>install</phase>
 						<goals>
 							<goal>repackage</goal>
+							<!-- <goal>build</goal> -->
+							<!-- <goal>push</goal> -->
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
+
 	</build>
 	<dependencies>
 		<dependency>
@@ -68,7 +74,10 @@
 			<artifactId>joda-time</artifactId>
 		</dependency>
 		<!-- Bean Validation API support -->
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
