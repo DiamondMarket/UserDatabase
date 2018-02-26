@@ -21,12 +21,18 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.13</version>
 				<configuration>
 					<imageName>mydiamondmarket/${docker.image.prefix}</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
+					<dockerHost>https://192.168.99.100:2376</dockerHost>
+					<dockerCertPath>C:\users\Vishal\.docker\machine\certs</dockerCertPath>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
@@ -36,21 +42,6 @@
 					</resources>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>default</id>
-						<phase>install</phase>
-						<goals>
-							<goal>repackage</goal>
-							<!-- <goal>build</goal> -->
-							<!-- <goal>push</goal> -->
-						</goals>
-					</execution>
-				</executions>
-			</plugin>	
 		</plugins>
 
 	</build>
