@@ -34,12 +34,12 @@ public class UserApiController implements UserApi {
 		if (httpHeaders.get("correlationId") != null) {
 			context.setCorrelationId(httpHeaders.get("correlationId").toString());
 		} else {
-			context.setCorrelationId("demo");
+			context.setCorrelationId("userDbService");
 		}
 		if (httpHeaders.get("ApplicationLabel") != null) {
 			context.setApplicationLabel(httpHeaders.get("ApplicationLabel").toString());
 		} else {
-			context.setApplicationLabel("demo");
+			context.setApplicationLabel("userDbService");
 		}
 
 		return context;
@@ -82,12 +82,12 @@ public class UserApiController implements UserApi {
 		if (httpHeaders.get("correlationId") != null) {
 			context.setCorrelationId(httpHeaders.get("correlationId").toString());
 		} else {
-			context.setCorrelationId("demo");
+			context.setCorrelationId("userDbService");
 		}
 		if (httpHeaders.get("ApplicationLabel") != null) {
 			context.setApplicationLabel(httpHeaders.get("ApplicationLabel").toString());
 		} else {
-			context.setApplicationLabel("demo");
+			context.setApplicationLabel("userDbService");
 		}
 		try {
 			response = successResponse(context, userService.createUser(body), HttpStatus.CREATED);
@@ -106,12 +106,12 @@ public class UserApiController implements UserApi {
 		if (httpHeaders.get("correlationId") != null) {
 			context.setCorrelationId(httpHeaders.get("correlationId").toString());
 		} else {
-			context.setCorrelationId("demo");
+			context.setCorrelationId("userDbService");
 		}
 		if (httpHeaders.get("ApplicationLabel") != null) {
 			context.setApplicationLabel(httpHeaders.get("ApplicationLabel").toString());
 		} else {
-			context.setApplicationLabel("demo");
+			context.setApplicationLabel("userDbService");
 		}
 
 		try {
@@ -127,19 +127,19 @@ public class UserApiController implements UserApi {
 	}
 
 	public ResponseEntity<Response> getUserById(@RequestHeader HttpHeaders httpHeaders,
-			@ApiParam(value = "", required = true) @PathVariable("userId") String userId) {
+			@ApiParam(value = "", required = true) @RequestParam(value="userId",required=true) String userId) {
 
 		ResponseEntity<Response> response = null;
 		TransactionContext context = createTransactionContext(httpHeaders);
 		if (httpHeaders.get("correlationId") != null) {
 			context.setCorrelationId(httpHeaders.get("correlationId").toString());
 		} else {
-			context.setCorrelationId("demo");
+			context.setCorrelationId("userDbService");
 		}
 		if (httpHeaders.get("ApplicationLabel") != null) {
 			context.setApplicationLabel(httpHeaders.get("ApplicationLabel").toString());
 		} else {
-			context.setApplicationLabel("demo");
+			context.setApplicationLabel("userDbService");
 		}
 		try {
 
@@ -162,12 +162,12 @@ public class UserApiController implements UserApi {
 		if (httpHeaders.get("correlationId") != null) {
 			context.setCorrelationId(httpHeaders.get("correlationId").toString());
 		} else {
-			context.setCorrelationId("demo");
+			context.setCorrelationId("userDbService");
 		}
 		if (httpHeaders.get("ApplicationLabel") != null) {
 			context.setApplicationLabel(httpHeaders.get("ApplicationLabel").toString());
 		} else {
-			context.setApplicationLabel("demo");
+			context.setApplicationLabel("userDbService");
 		}
 		try {
 
@@ -190,12 +190,12 @@ public class UserApiController implements UserApi {
 		if (httpHeaders.get("correlationId") != null) {
 			context.setCorrelationId(httpHeaders.get("correlationId").toString());
 		} else {
-			context.setCorrelationId("demo");
+			context.setCorrelationId("userDbService");
 		}
 		if (httpHeaders.get("ApplicationLabel") != null) {
 			context.setApplicationLabel(httpHeaders.get("ApplicationLabel").toString());
 		} else {
-			context.setApplicationLabel("demo");
+			context.setApplicationLabel("userDbService");
 		}
 		try {
 

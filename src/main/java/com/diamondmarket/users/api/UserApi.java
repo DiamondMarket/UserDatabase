@@ -54,9 +54,9 @@ public interface UserApi {
 	@ApiImplicitParams({ @ApiImplicitParam(name = "correlationId", value = "Correlation ID", paramType = "header"),
 			@ApiImplicitParam(name = "ApplicationLabel", value = "Application label", paramType = "header") })
 
-	@RequestMapping(value = "/user/{userId}", produces = { "application/json" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/user", produces = { "application/json" }, method = RequestMethod.GET)
 	ResponseEntity<Response> getUserById(@RequestHeader HttpHeaders httpHeaders,
-			@ApiParam(value = "", required = true) @PathVariable("userId") String userId);
+			@ApiParam(value = "", required = true) @RequestParam(value="userId", required=true) String userId);
 
 	@ApiOperation(value = "Logs user into the system", notes = "", response = Response.class, tags = { "user", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "successful operation", response = Response.class),

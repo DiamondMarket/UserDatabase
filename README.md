@@ -1,2 +1,2 @@
 # UserDatabase
-this is for fetching data from userdb
+This service is used for fetching data from user datbase.
