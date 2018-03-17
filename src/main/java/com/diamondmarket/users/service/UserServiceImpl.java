@@ -1,6 +1,8 @@
 package com.diamondmarket.users.service;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.diamondmarket.users.model.User;
@@ -16,7 +18,12 @@ public class UserServiceImpl implements UserService {
 	public User createUser(User user) throws Exception {
 		User returnMessage = null;
 		try {
-			user.set_id(user.getUserRole().substring(0, 1) + LocalDateTime.now());
+			
+			String uuId = UUID.randomUUID().toString();
+			while(userRepository.findOne(uuId) != null) {
+				uuId = UUID.randomUUID().toString();
+			}
+			user.set_id(user.getUserRole().substring(0, 1) + uuId);
 			returnMessage = userRepository.save(user);
 
 		} catch (Exception e) {
